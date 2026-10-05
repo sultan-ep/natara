@@ -1,0 +1,27 @@
+import { AcademicReference, Language } from '../types';
+export interface ModuleSourceGroup { moduleId: number; moduleTitle: string; historicalNote: string; sources: AcademicReference[]; }
+const groups: ModuleSourceGroup[] = [
+  { moduleId: 1, moduleTitle: 'Materi 1: Sejarah Hubungan Indonesia–Turki', historicalNote: 'Bedakan hubungan historis Kesultanan Aceh–Utsmaniyah pada abad ke-16 dari hubungan diplomatik modern Republik Indonesia–Republik Türkiye yang dibentuk pada 1950.', sources: [
+    { author: 'Kedutaan Besar Republik Türkiye di Jakarta', title: 'Mission / Information Note', publisher: 'Ministry of Foreign Affairs of Türkiye', year: 'n.d.', linkOrNote: 'https://jakarta-emb.mfa.gov.tr/Mission/ShowInfoNote/411733' },
+    { author: 'KBRI Ankara', title: 'Rencana Strategis KBRI Ankara 2025–2029', publisher: 'Kementerian Luar Negeri Republik Indonesia', year: '2025', linkOrNote: 'https://kemlu.go.id/files/repositori/78963/17794319746a0ffa26e8f6f_Renstra_KBRI_Ankara_2025___2029_Publ__sh.pdf' }
+  ]},
+  { moduleId: 2, moduleTitle: 'Materi 2: Pendidikan dan Akademik', historicalNote: 'Angka beasiswa dan mobilitas pelajar dalam materi merujuk pada periode yang disebutkan sumber, bukan statistik real-time.', sources: [
+    { author: 'Direktorat Jenderal Pendidikan Tinggi', title: 'Menuju Kolaborasi Global: Indonesia dan Turki Bangun Kemitraan Pendidikan Tinggi', publisher: 'Kemdiktisaintek', year: '2025', linkOrNote: 'https://dikti.kemdikbud.go.id/news/article/menuju-kolaborasi-global-indonesia-dan-turki-bangun-kemitraan-pendidikan-tinggi' },
+    { author: 'Kedutaan Besar Republik Türkiye di Jakarta', title: 'Mission / Information Note', publisher: 'Ministry of Foreign Affairs of Türkiye', year: 'n.d.', linkOrNote: 'https://jakarta-emb.mfa.gov.tr/Mission/ShowInfoNote/411733' }
+  ]},
+  { moduleId: 3, moduleTitle: 'Materi 3: Budaya, Masyarakat, dan Keislaman', historicalNote: 'Data historis program tahfiz menggambarkan periode yang disebutkan dan tidak boleh dibaca sebagai jumlah peserta aktif saat ini.', sources: [
+    { author: 'Kementerian Agama Republik Indonesia', title: 'Terima Dubes Turki, Menag Bahas Kerja Sama Bidang Agama, Budaya hingga Pendidikan', publisher: 'Kemenag RI', year: '2025', linkOrNote: 'https://kemenag.go.id/internasional/terima-dubes-turki-menag-bahas-kerja-sama-bidang-agama-budaya-hingga-pendidikan-Hi38z' },
+    { author: 'Kementerian Agama Republik Indonesia', title: 'Menag Bekali Spirit Ratusan Santri Tahfidz Asal Indonesia di Turki', publisher: 'Kemenag RI', year: 'n.d.', linkOrNote: 'https://kemenag.go.id/nasional/menag-bekali-spirit-ratusan-santri-tahfidz-asal-indonesia-di-turki-oojb83' },
+    { author: 'KBRI Ankara', title: 'Rencana Strategis KBRI Ankara 2025–2029', publisher: 'Kementerian Luar Negeri Republik Indonesia', year: '2025', linkOrNote: 'https://kemlu.go.id/files/repositori/78963/17794319746a0ffa26e8f6f_Renstra_KBRI_Ankara_2025___2029_Publ__sh.pdf' }
+  ]}
+];
+// Bibliographic titles are kept in their original language so readers can identify and verify each source.
+const localizedLabels: Record<Language, { titles: string[]; notes: string[] }> = {
+  id: { titles: ['Materi 1: Sejarah Hubungan Indonesia–Turki', 'Materi 2: Pendidikan dan Akademik', 'Materi 3: Budaya, Masyarakat, dan Kerja Sama Keagamaan'], notes: ['Bedakan hubungan historis Aceh–Utsmaniyah pada abad ke-16 dari hubungan diplomatik modern yang dibentuk pada 1950.', 'Angka beasiswa dan mobilitas pelajar merujuk pada periode yang disebutkan sumber, bukan statistik real-time.', 'Data historis program tahfiz merujuk pada periode yang disebutkan dan bukan jumlah peserta aktif saat ini.'] },
+  en: { titles: ['Module 1: Indonesia–Türkiye Relations', 'Module 2: Education and Academia', 'Module 3: Culture, Society, and Religious Cooperation'], notes: ['Distinguish the 16th-century Aceh–Ottoman historical connection from modern diplomatic relations established in 1950.', 'Scholarship and student mobility figures refer to the periods cited in the sources, not real-time statistics.', 'Historical tahfiz program figures refer to the period cited and do not represent current active participants.'] },
+  ar: { titles: ['الوحدة الأولى: العلاقات الإندونيسية التركية', 'الوحدة الثانية: التعليم والأوساط الأكاديمية', 'الوحدة الثالثة: الثقافة والمجتمع والتعاون الديني'], notes: ['ينبغي التمييز بين الروابط التاريخية لآتشيه والعثمانيين في القرن السادس عشر والعلاقات الدبلوماسية الحديثة التي أُقيمت عام 1950.', 'تشير أرقام المنح الدراسية وتنقل الطلاب إلى الفترات المذكورة في المصادر، وليست إحصاءات آنية.', 'تشير بيانات برنامج التحفيظ التاريخية إلى الفترة المذكورة ولا تمثل عدد المشاركين النشطين حالياً.'] },
+  tr: { titles: ['1. Bölüm: Endonezya–Türkiye İlişkileri', '2. Bölüm: Eğitim ve Akademi', '3. Bölüm: Kültür, Toplum ve Dinî İş Birliği'], notes: ['16. yüzyıldaki Açe–Osmanlı tarihî bağları ile 1950’de kurulan modern diplomatik ilişkileri birbirinden ayırın.', 'Burs ve öğrenci hareketliliği verileri, kaynaklarda belirtilen dönemlere aittir; gerçek zamanlı istatistik değildir.', 'Tahfiz programına ilişkin tarihî veriler belirtilen dönemi kapsar ve günümüzdeki aktif katılımcı sayısını göstermez.'] },
+};
+export const sourcesData: Record<Language, ModuleSourceGroup[]> = Object.fromEntries(
+  (Object.keys(localizedLabels) as Language[]).map((lang) => [lang, groups.map((group, index) => ({ ...group, moduleTitle: localizedLabels[lang].titles[index], historicalNote: localizedLabels[lang].notes[index] }))])
+) as Record<Language, ModuleSourceGroup[]>;

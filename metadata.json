@@ -1,0 +1,8 @@
+{
+  "name": "Hubungan Indonesia–Turki: Sejarah dan Kerja Sama",
+  "description": "Media pembelajaran interaktif tentang hubungan Indonesia–Turki dalam sejarah, pendidikan, budaya, dan kerja sama keislaman.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
