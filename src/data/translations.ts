@@ -111,9 +111,9 @@ export interface TranslationStrings {
 
 export const translations: Record<Language, TranslationStrings> = {
   id: {
-    brandName: 'Indonesia–Turki: Jejak Hubungan',
+    brandName: 'OTTOMANTARA',
     tagline: 'Sejarah, Pendidikan, dan Kerja Sama Bilateral',
-    siteDescription: 'Media pembelajaran interaktif tentang sejarah hubungan Indonesia dan Turki, diplomasi, pendidikan, budaya, dan kerja sama bilateral.',
+    siteDescription: 'Media pembelajaran interaktif tentang sejarah persahabatan Indonesia dan Türkiye dari masa ke masa.',
     nav: {
       home: 'Beranda',
       learning: 'Belajar',
@@ -122,12 +122,12 @@ export const translations: Record<Language, TranslationStrings> = {
       sources: 'Sumber Sejarah',
     },
     hero: {
-      titleMain: 'Hubungan Indonesia–Turki',
-      titleSub: 'Dari Jejak Sejarah ke Kemitraan Modern',
-      subtitle: 'Pelajari perjalanan hubungan Indonesia dan Turki, mulai dari hubungan historis Aceh–Utsmaniyah hingga diplomasi, pendidikan, budaya, dan kerja sama bilateral masa kini.',
+      titleMain: 'Persahabatan Indonesia–Türkiye',
+      titleSub: 'Dari Masa ke Masa',
+      subtitle: 'Jelajahi sejarah, budaya, pendidikan, dan persahabatan yang menghubungkan Indonesia dan Türkiye.',
       ctaStart: 'Mulai Belajar',
       ctaMap: 'Lihat Linimasa',
-      highlightNetwork: 'Enam Tonggak Hubungan Indonesia–Turki',
+      highlightNetwork: 'Enam Tonggak Hubungan Indonesia–Türkiye',
       conceptPill: 'Sejarah dan Kerja Sama Bilateral',
     },
     dashboard: {
@@ -142,7 +142,7 @@ export const translations: Record<Language, TranslationStrings> = {
       quizLockedTitle: 'Teka-Teki Silang Terkunci',
       quizLockedDesc: 'Pelajari tiga materi tentang sejarah bilateral, pendidikan, budaya, dan hubungan antarmasyarakat sebelum mengerjakan TTS.',
       quizUnlockedTitle: 'Teka-Teki Silang Terbuka!',
-      quizUnlockedDesc: 'Uji pemahamanmu tentang sejarah dan perkembangan hubungan Indonesia–Turki.',
+      quizUnlockedDesc: 'Uji pemahamanmu tentang sejarah dan perkembangan hubungan Indonesia–Türkiye.',
       btnStartQuiz: 'Kerjakan TTS Sekarang',
     },
     materials: {
@@ -163,7 +163,7 @@ export const translations: Record<Language, TranslationStrings> = {
       goToQuizCTA: 'Semua materi telah selesai! Lanjut ke evaluasi TTS.',
     },
     map: {
-      title: 'Linimasa Hubungan Indonesia–Turki',
+      title: 'Linimasa Hubungan Indonesia–Türkiye',
       subtitle: 'Enam tonggak penting dari hubungan historis Aceh–Utsmaniyah hingga kerja sama bilateral pada 2025.',
       filterAll: 'Semua Jaringan',
       filterMaritime: 'Jalur Maritim Samudra',
@@ -206,23 +206,23 @@ export const translations: Record<Language, TranslationStrings> = {
       title: 'Sumber Sejarah & Rujukan Akademik',
       subtitle: 'Disusun berdasarkan riset historiografi modern, karya sejarawan terkemuka, dan literatur akademik tepercaya.',
       methodologyNote: 'Penyusunan narasi sejarah pada aplikasi ini menghindari simplifikasi linear dan menyajikan proses islamisasi sebagai dinamika jejaring bertahap yang melibatkan perdagangan, pelayaran, keilmuan, dan hubungan antarmasyarakat.',
-      material1Sources: 'Sumber Materi 1: Sejarah Hubungan Indonesia–Turki',
+      material1Sources: 'Sumber Materi 1: Sejarah Hubungan Indonesia–Türkiye',
       material2Sources: 'Sumber Materi 2: Pendidikan dan Akademik',
       material3Sources: 'Sumber Materi 3: Budaya, Masyarakat, dan Keislaman',
     },
     footer: {
-      aboutTitle: 'Hubungan Indonesia–Turki',
-      aboutDesc: 'Pelajari sejarah bersama, pertukaran pendidikan, dialog budaya, dan kerja sama yang terus berkembang antara Indonesia dan Turki.',
+      aboutTitle: 'OTTOMANTARA',
+      aboutDesc: 'Pelajari sejarah bersama, pertukaran pendidikan, dialog budaya, dan kerja sama yang terus berkembang antara Indonesia dan Türkiye.',
       quickLinks: 'Tautan Cepat',
       legalNote: 'Media pembelajaran interaktif terbuka untuk pelajar SMA dan peminat sejarah.',
-      copyright: '© 2026 Hubungan Indonesia–Turki. Media edukasi tentang sejarah dan kerja sama bilateral.',
+      copyright: '© 2026 OTTOMANTARA. Media edukasi tentang sejarah dan kerja sama bilateral.',
     },
   },
 
   en: {
-    brandName: 'Indonesia–Türkiye Relations',
+    brandName: 'OTTOMANTARA',
     tagline: 'History, Education, and Bilateral Cooperation',
-    siteDescription: 'An interactive learning resource about Indonesia–Türkiye relations, diplomacy, education, culture, and bilateral cooperation.',
+    siteDescription: 'An interactive learning resource about Indonesia–Türkiye friendship from time to time.',
     nav: {
       home: 'Home',
       learning: 'Learn',
@@ -231,9 +231,9 @@ export const translations: Record<Language, TranslationStrings> = {
       sources: 'Historical Sources',
     },
     hero: {
-      titleMain: 'Indonesia–Türkiye Relations',
-      titleSub: 'From Historical Ties to Modern Partnership',
-      subtitle: 'Explore the relationship between Indonesia and Türkiye, from historical Aceh–Ottoman ties to contemporary diplomacy, education, culture, and bilateral cooperation.',
+      titleMain: 'Indonesia–Türkiye Friendship',
+      titleSub: 'From Time to Time',
+      subtitle: 'Explore the history, culture, education, and friendship connecting Indonesia and Türkiye.',
       ctaStart: 'Start Learning',
       ctaMap: 'Explore Interactive Map',
       highlightNetwork: 'Six Milestones in Indonesia–Türkiye Relations',
@@ -320,16 +320,16 @@ export const translations: Record<Language, TranslationStrings> = {
       material3Sources: 'Sources for Module 3: Culture, Society, and Religious Cooperation',
     },
     footer: {
-      aboutTitle: 'Indonesia–Türkiye Relations',
+      aboutTitle: 'OTTOMANTARA',
       aboutDesc: 'Learn about the shared history, educational exchange, cultural dialogue, and growing cooperation between Indonesia and Türkiye.',
       quickLinks: 'Quick Links',
       legalNote: 'An interactive historical learning resource for students and inquisitive minds.',
-      copyright: '© 2026 Indonesia–Türkiye Relations. An educational resource on bilateral history and cooperation.',
+      copyright: '© 2026 OTTOMANTARA. An educational resource on bilateral history and cooperation.',
     },
   },
 
   ar: {
-    brandName: 'العلاقات الإندونيسية التركية',
+    brandName: 'العثمانتارا',
     tagline: 'التاريخ والتعليم والتعاون الثنائي',
     siteDescription: 'مورد تعليمي تفاعلي عن العلاقات الإندونيسية التركية والدبلوماسية والتعليم والثقافة والتعاون الثنائي.',
     nav: {
@@ -340,9 +340,9 @@ export const translations: Record<Language, TranslationStrings> = {
       sources: 'المصادر التاريخية',
     },
     hero: {
-      titleMain: 'العلاقات الإندونيسية التركية',
-      titleSub: 'من الروابط التاريخية إلى الشراكة الحديثة',
-      subtitle: 'تعرّف على تاريخ العلاقات بين إندونيسيا وتركيا، من الروابط التاريخية بين آتشيه والعثمانيين إلى الدبلوماسية والتعليم والثقافة والتعاون الثنائي اليوم.',
+      titleMain: 'الصداقة الإندونيسية التركية',
+      titleSub: 'من عصرٍ إلى عصر',
+      subtitle: 'استكشف التاريخ والثقافة والتعليم والصداقة التي تربط بين إندونيسيا وتركيا. .',
       ctaStart: 'ابدأ التعلم',
       ctaMap: 'استكشف الخريطة التفاعلية',
       highlightNetwork: 'ست محطات في العلاقات الإندونيسية التركية',
@@ -429,16 +429,16 @@ export const translations: Record<Language, TranslationStrings> = {
       material3Sources: 'مصادر الوحدة الثالثة: الثقافة والمجتمع والتعاون الديني',
     },
     footer: {
-      aboutTitle: 'العلاقات الإندونيسية التركية',
+      aboutTitle: 'العثمانتارا',
       aboutDesc: 'تعرّف على التاريخ المشترك والتبادل التعليمي والحوار الثقافي وتنامي التعاون بين إندونيسيا وتركيا.',
       quickLinks: 'روابط سريعة',
       legalNote: 'منصة تعليمية مفتوحة لطلاب المرحلة الثانوية والمهتمين بالتاريخ.',
-      copyright: '© 2026 العلاقات الإندونيسية التركية. مورد تعليمي حول التاريخ والتعاون الثنائي.',
+      copyright: '© 2026 العثمانتارا. مورد تعليمي حول التاريخ والتعاون الثنائي.',
     },
   },
 
   tr: {
-    brandName: 'Endonezya–Türkiye İlişkileri',
+    brandName: 'OTTOMANTARA',
     tagline: 'Tarih, Eğitim ve İkili İş Birliği',
     siteDescription: 'Endonezya–Türkiye ilişkileri, diplomasi, eğitim, kültür ve ikili iş birliği hakkında etkileşimli bir öğrenme kaynağı.',
     nav: {
@@ -450,8 +450,8 @@ export const translations: Record<Language, TranslationStrings> = {
     },
     hero: {
       titleMain: 'Endonezya–Türkiye İlişkileri',
-      titleSub: 'Tarihî Bağlardan Modern Ortaklığa',
-      subtitle: 'Endonezya ve Türkiye arasındaki ilişkileri; tarihî Açe–Osmanlı bağlarından günümüz diplomasisi, eğitim, kültür ve ikili iş birliğine uzanan yönleriyle keşfedin.',
+      titleSub: 'Çağdan Çağa',
+      subtitle: "Endonezya ve Türkiye'yi birbirine bağlayan tarihi, kültürü, eğitimi ve dostluğu keşfedin.",
       ctaStart: 'Öğrenmeye Başla',
       ctaMap: 'Etkileşimli Haritayı İncele',
       highlightNetwork: 'Endonezya–Türkiye İlişkilerinde Altı Önemli Dönüm Noktası',
@@ -538,11 +538,11 @@ export const translations: Record<Language, TranslationStrings> = {
       material3Sources: '3. Bölüm Kaynakları: Kültür, Toplum ve Dinî İş Birliği',
     },
     footer: {
-      aboutTitle: 'Endonezya–Türkiye İlişkileri',
+      aboutTitle: 'OTTOMANTARA',
       aboutDesc: 'Endonezya ve Türkiye arasındaki ortak tarihi, eğitim değişimini, kültürel diyaloğu ve gelişen iş birliğini keşfedin.',
       quickLinks: 'Hızlı Bağlantılar',
       legalNote: 'Lise öğrencileri ve tarih meraklıları için açık, etkileşimli eğitim kaynağı.',
-      copyright: '© 2026 Endonezya–Türkiye İlişkileri. İkili tarih ve iş birliği üzerine eğitim kaynağı.',
+      copyright: '© 2026 OTTOMANTARA. İkili tarih ve iş birliği üzerine eğitim kaynağı.',
     },
   },
 };
