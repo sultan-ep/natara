@@ -14,7 +14,7 @@ import { translations } from './data/translations';
 export default function App() {
   const [currentLang, setCurrentLang] = useState<Language>(() => {
     const saved = localStorage.getItem('jejak_islam_lang');
-    return (saved === 'id' || saved === 'en' || saved === 'ar' || saved === 'tr') ? saved : 'id';
+    return (saved === 'id' || saved === 'en' || saved === 'ar' || saved === 'tr') ? saved : 'en';
   });
   const [userProgress, setUserProgress] = useState<UserProgress>(() => {
     const saved = localStorage.getItem('jejak_islam_progress');
