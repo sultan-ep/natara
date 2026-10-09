@@ -111,7 +111,7 @@ export interface TranslationStrings {
 
 export const translations: Record<Language, TranslationStrings> = {
   id: {
-    brandName: 'OTTOMANTARA',
+    brandName: 'NATARA',
     tagline: 'Sejarah, Pendidikan, dan Kerja Sama Bilateral',
     siteDescription: 'Media pembelajaran interaktif tentang sejarah persahabatan Indonesia dan Türkiye dari masa ke masa.',
     nav: {
@@ -211,16 +211,16 @@ export const translations: Record<Language, TranslationStrings> = {
       material3Sources: 'Sumber Materi 3: Budaya, Masyarakat, dan Keislaman',
     },
     footer: {
-      aboutTitle: 'OTTOMANTARA',
+      aboutTitle: 'NATARA',
       aboutDesc: 'Pelajari sejarah bersama, pertukaran pendidikan, dialog budaya, dan kerja sama yang terus berkembang antara Indonesia dan Türkiye.',
       quickLinks: 'Tautan Cepat',
       legalNote: 'Media pembelajaran interaktif terbuka untuk pelajar SMA dan peminat sejarah.',
-      copyright: '© 2026 OTTOMANTARA. Media edukasi tentang sejarah dan kerja sama bilateral.',
+      copyright: '© 2026 NATARA. Media edukasi tentang sejarah dan kerja sama bilateral.',
     },
   },
 
   en: {
-    brandName: 'OTTOMANTARA',
+    brandName: 'NATARA',
     tagline: 'History, Education, and Bilateral Cooperation',
     siteDescription: 'An interactive learning resource about Indonesia–Türkiye friendship from time to time.',
     nav: {
@@ -320,16 +320,16 @@ export const translations: Record<Language, TranslationStrings> = {
       material3Sources: 'Sources for Module 3: Culture, Society, and Religious Cooperation',
     },
     footer: {
-      aboutTitle: 'OTTOMANTARA',
+      aboutTitle: 'NATARA',
       aboutDesc: 'Learn about the shared history, educational exchange, cultural dialogue, and growing cooperation between Indonesia and Türkiye.',
       quickLinks: 'Quick Links',
       legalNote: 'An interactive historical learning resource for students and inquisitive minds.',
-      copyright: '© 2026 OTTOMANTARA. An educational resource on bilateral history and cooperation.',
+      copyright: '© 2026 NATARA. An educational resource on bilateral history and cooperation.',
     },
   },
 
   ar: {
-    brandName: 'العثمانتارا',
+    brandName: 'ناتارا',
     tagline: 'التاريخ والتعليم والتعاون الثنائي',
     siteDescription: 'مورد تعليمي تفاعلي عن العلاقات الإندونيسية التركية والدبلوماسية والتعليم والثقافة والتعاون الثنائي.',
     nav: {
@@ -429,16 +429,16 @@ export const translations: Record<Language, TranslationStrings> = {
       material3Sources: 'مصادر الوحدة الثالثة: الثقافة والمجتمع والتعاون الديني',
     },
     footer: {
-      aboutTitle: 'العثمانتارا',
+      aboutTitle: 'ناتارا',
       aboutDesc: 'تعرّف على التاريخ المشترك والتبادل التعليمي والحوار الثقافي وتنامي التعاون بين إندونيسيا وتركيا.',
       quickLinks: 'روابط سريعة',
       legalNote: 'منصة تعليمية مفتوحة لطلاب المرحلة الثانوية والمهتمين بالتاريخ.',
-      copyright: '© 2026 العثمانتارا. مورد تعليمي حول التاريخ والتعاون الثنائي.',
+      copyright: '© 2026 ناتارا. مورد تعليمي حول التاريخ والتعاون الثنائي.',
     },
   },
 
   tr: {
-    brandName: 'OTTOMANTARA',
+    brandName: 'NATARA',
     tagline: 'Tarih, Eğitim ve İkili İş Birliği',
     siteDescription: 'Endonezya–Türkiye ilişkileri, diplomasi, eğitim, kültür ve ikili iş birliği hakkında etkileşimli bir öğrenme kaynağı.',
     nav: {
@@ -538,11 +538,11 @@ export const translations: Record<Language, TranslationStrings> = {
       material3Sources: '3. Bölüm Kaynakları: Kültür, Toplum ve Dinî İş Birliği',
     },
     footer: {
-      aboutTitle: 'OTTOMANTARA',
+      aboutTitle: 'NATARA',
       aboutDesc: 'Endonezya ve Türkiye arasındaki ortak tarihi, eğitim değişimini, kültürel diyaloğu ve gelişen iş birliğini keşfedin.',
       quickLinks: 'Hızlı Bağlantılar',
       legalNote: 'Lise öğrencileri ve tarih meraklıları için açık, etkileşimli eğitim kaynağı.',
-      copyright: '© 2026 OTTOMANTARA. İkili tarih ve iş birliği üzerine eğitim kaynağı.',
+      copyright: '© 2026 NATARA. İkili tarih ve iş birliği üzerine eğitim kaynağı.',
     },
   },
 };
