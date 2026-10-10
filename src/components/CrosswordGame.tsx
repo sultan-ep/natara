@@ -323,10 +323,10 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left/Top: Interactive Crossword Grid */}
         <div className="lg:col-span-7 flex flex-col items-center">
-          <div className="w-full max-w-lg bg-stone-900 p-4 sm:p-6 rounded-3xl shadow-lg border border-stone-300">
+          <div className="w-full max-w-2xl rounded-3xl border border-stone-300 bg-[#b94736] p-3 shadow-lg sm:p-5">
             {/* The Grid */}
             <div
-              className="grid gap-1 sm:gap-1.5 mx-auto select-none"
+              className="mx-auto grid select-none overflow-hidden rounded-lg bg-transparent"
               style={{
                 gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
               }}
@@ -346,7 +346,8 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
                     return (
                       <div
                         key={`${r}-${c}`}
-                        className="aspect-square bg-stone-950/90 rounded-sm opacity-90"
+                        aria-hidden="true"
+                        className="aspect-square bg-transparent"
                       />
                     );
                   }
@@ -355,19 +356,19 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
                     <div
                       key={`${r}-${c}`}
                       onClick={() => handleCellClick(r, c)}
-                      className={`relative aspect-square flex items-center justify-center rounded cursor-pointer transition-all duration-100 font-bold text-sm sm:text-base ${
-                        isSelected
-                          ? 'bg-amber-300 text-stone-950 ring-2 ring-amber-500 z-10 shadow-sm'
-                          : isInActiveWord
-                          ? 'bg-emerald-100 text-emerald-950'
-                          : isCheckedCorrect
-                          ? 'bg-emerald-50 text-emerald-900 border border-emerald-400'
-                          : 'bg-white text-stone-900 hover:bg-stone-100'
-                      }`}
+                        className={`relative aspect-square flex items-center justify-center border border-stone-500/80 cursor-pointer transition-all duration-100 font-bold text-sm sm:text-base ${
+                          isSelected
+                            ? 'bg-amber-300 text-stone-950 ring-2 ring-amber-500 z-10 shadow-sm'
+                            : isInActiveWord
+                            ? 'bg-[#fffef0] text-emerald-950'
+                            : isCheckedCorrect
+                            ? 'bg-emerald-50 text-emerald-900 border-emerald-400'
+                            : 'bg-[#fffef0] text-stone-900 hover:bg-white'
+                        }`}
                     >
                       {/* Clue Number Indicator */}
                       {clueNum && (
-                        <span className="absolute top-0.5 left-1 text-[9px] sm:text-[10px] font-mono font-medium text-stone-500 pointer-events-none leading-none">
+                          <span className="absolute left-1 top-1 text-[9px] font-mono font-medium leading-none text-stone-500 pointer-events-none sm:text-[10px]">
                           {clueNum}
                         </span>
                       )}
