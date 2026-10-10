@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Clock, RotateCcw, Send, CheckCircle2, Trophy, BookOpen, AlertCircle, Sparkles, HelpCircle } from 'lucide-react';
 import { Language, UserProgress, CrosswordClue } from '../types';
 import { translations } from '../data/translations';
 import { LATIN_CROSSWORD_CLUES, CROSSWORD_GRID_DIMENSIONS } from '../data/crosswordData';
+
+const getAnswerCharacters = (answer: string) => Array.from(answer);
 
 interface CrosswordGameProps {
   userProgress: UserProgress;
@@ -28,26 +30,21 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
   const clues = LATIN_CROSSWORD_CLUES[currentLang];
   const { rows, cols } = CROSSWORD_GRID_DIMENSIONS;
 
-  // Build grid of valid letters from clues
-  const solutionGrid = useRef<(string | null)[][]>(
-    Array(rows).fill(null).map(() => Array(cols).fill(null))
-  ).current;
+  const { solutionGrid, clueNumberGrid } = useMemo(() => {
+    const solutionGrid = Array(rows).fill(null).map(() => Array<string | null>(cols).fill(null));
+    const clueNumberGrid = Array(rows).fill(null).map(() => Array<number | null>(cols).fill(null));
 
-  // Clue numbers placement
-  const clueNumberGrid = useRef<(number | null)[][]>(
-    Array(rows).fill(null).map(() => Array(cols).fill(null))
-  ).current;
-
-  // Initialize solutions and clue numbers once
-  useEffect(() => {
     clues.forEach((c) => {
       clueNumberGrid[c.row][c.col] = c.number;
-      for (let i = 0; i < c.answer.length; i++) {
+      const answerCharacters = getAnswerCharacters(c.answer);
+      for (let i = 0; i < answerCharacters.length; i++) {
         const r = c.direction === 'across' ? c.row : c.row + i;
         const col = c.direction === 'across' ? c.col + i : c.col;
-        solutionGrid[r][col] = c.answer[i];
+        solutionGrid[r][col] = answerCharacters[i];
       }
     });
+
+    return { solutionGrid, clueNumberGrid };
   }, [clues, rows, cols]);
 
   // Player grid state
@@ -75,6 +72,20 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
   const [correctCount, setCorrectCount] = useState<number>(0);
   const [totalQuestions, setTotalQuestions] = useState<number>(clues.length);
 
+  useEffect(() => {
+    setUserGrid(Array(rows).fill('').map(() => Array(cols).fill('')));
+    setCheckedCells(Array(rows).fill(false).map(() => Array(cols).fill(false)));
+    setSelectedCell({ row: clues[0].row, col: clues[0].col });
+    setDirection(clues[0].direction);
+    setSelectedClueNumber(clues[0].number);
+    setSecondsElapsed(0);
+    setIsTimerRunning(true);
+    setIsSubmitted(false);
+    setQuizScore(0);
+    setCorrectCount(0);
+    setTotalQuestions(clues.length);
+  }, [clues, rows, cols]);
+
   // Timer interval
   useEffect(() => {
     if (!isTimerRunning || isSubmitted) return;
@@ -95,14 +106,15 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
   useEffect(() => {
     const matchingClues = clues.filter((c) => {
       if (c.direction !== direction) return false;
+      const answerLength = getAnswerCharacters(c.answer).length;
       if (c.direction === 'across') {
         return c.row === selectedCell.row &&
           selectedCell.col >= c.col &&
-          selectedCell.col < c.col + c.answer.length;
+          selectedCell.col < c.col + answerLength;
       } else {
         return c.col === selectedCell.col &&
           selectedCell.row >= c.row &&
-          selectedCell.row < c.row + c.answer.length;
+          selectedCell.row < c.row + answerLength;
       }
     });
 
@@ -119,7 +131,8 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
     if (!activeClue) return [];
 
     const cells: CellCoordinate[] = [];
-    for (let i = 0; i < activeClue.answer.length; i++) {
+    const answerLength = getAnswerCharacters(activeClue.answer).length;
+    for (let i = 0; i < answerLength; i++) {
       const r = activeClue.direction === 'across' ? activeClue.row : activeClue.row + i;
       const col = activeClue.direction === 'across' ? activeClue.col + i : activeClue.col;
       cells.push({ row: r, col });
@@ -194,9 +207,9 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
           setSelectedCell({ row: prevRow, col: prevCol });
         }
       }
-    } else if (/^[a-zA-Z]$/.test(e.key)) {
+    } else if (/^\p{L}$/u.test(e.key)) {
       e.preventDefault();
-      const letter = e.key.toUpperCase();
+      const letter = e.key.toLocaleUpperCase(currentLang);
       const updated = userGrid.map((rArr) => [...rArr]);
       updated[row][col] = letter;
       setUserGrid(updated);
@@ -242,10 +255,11 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
     let correct = 0;
     clues.forEach((clue) => {
       let wordCorrect = true;
-      for (let i = 0; i < clue.answer.length; i++) {
+      const answerCharacters = getAnswerCharacters(clue.answer);
+      for (let i = 0; i < answerCharacters.length; i++) {
         const r = clue.direction === 'across' ? clue.row : clue.row + i;
         const c = clue.direction === 'across' ? clue.col + i : clue.col;
-        if (userGrid[r][c] !== clue.answer[i]) {
+        if (userGrid[r][c] !== answerCharacters[i]) {
           wordCorrect = false;
           break;
         }
@@ -421,7 +435,7 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
                         <span className={`text-[10px] uppercase font-semibold tracking-wider ${
                           isActive ? 'text-amber-200' : 'text-stone-400'
                         }`}>
-                          {t.quiz.categoryLabels[clue.category]} · {clue.answer.length} {({ id: 'Huruf', en: 'Letters', ar: 'أحرف', tr: 'Harf' } as const)[currentLang]}
+                          {t.quiz.categoryLabels[clue.category]} · {getAnswerCharacters(clue.answer).length} {({ id: 'Huruf', en: 'Letters', ar: 'أحرف', tr: 'Harf' } as const)[currentLang]}
                         </span>
                       </div>
                       <p>{clue.clue}</p>
@@ -465,7 +479,7 @@ export const CrosswordGame: React.FC<CrosswordGameProps> = ({
                         <span className={`text-[10px] uppercase font-semibold tracking-wider ${
                           isActive ? 'text-amber-200' : 'text-stone-400'
                         }`}>
-                          {t.quiz.categoryLabels[clue.category]} · {clue.answer.length} {({ id: 'Huruf', en: 'Letters', ar: 'أحرف', tr: 'Harf' } as const)[currentLang]}
+                          {t.quiz.categoryLabels[clue.category]} · {getAnswerCharacters(clue.answer).length} {({ id: 'Huruf', en: 'Letters', ar: 'أحرف', tr: 'Harf' } as const)[currentLang]}
                         </span>
                       </div>
                       <p>{clue.clue}</p>
